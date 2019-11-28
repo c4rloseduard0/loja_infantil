@@ -11,7 +11,7 @@
             $m = new Proprietario();
             $users = $m->getUsers();
             $this->view->dados = $users;
-            $this->render('index', 'temp1.html');
+            $this->render('index', 'temp1');
         }
     }
  ?>
