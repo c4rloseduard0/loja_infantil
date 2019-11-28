@@ -2,13 +2,16 @@
     namespace App\Controllers;
 
     use App\Models\Proprietario;
+    use App\ViewAction;
 
-    class IndexController
+    class IndexController extends ViewAction
     {
         public function index()
         {
             $m = new Proprietario();
-            print_r($m->getUsers());
+            $users = $m->getUsers();
+            $this->view->dados = $users;
+            $this->render('index', 'temp1.html');
         }
     }
  ?>
