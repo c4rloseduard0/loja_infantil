@@ -8,10 +8,7 @@
     {
         public function index()
         {
-            $m = new Usuario();
-            $users = $m->getUsers();
-            $this->view->dados = $users;
-            $this->render('index', 'temp1');
+            $this->render("index", "temp1");
         }
     }
  ?>

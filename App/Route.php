@@ -22,10 +22,16 @@
 			    'action' => 'index'
 		    );
 
-    		$routes['sobre_nos'] = array(
-    			'route' => '/sobre_nos',
-    			'controller' => 'indexController',
-    			'action' => 'sobreNos'
+    		$routes['login'] = array(
+    			'route' => '/login',
+    			'controller' => 'authController',
+    			'action' => 'login'
+    		);
+
+            $routes['cadatrar'] = array(
+    			'route' => '/cadastro',
+    			'controller' => 'UsuarioController',
+    			'action' => 'cadastrar'
     		);
 
             $this->setRoutes($routes);
