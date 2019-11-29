@@ -114,9 +114,9 @@ CREATE TABLE IF NOT EXISTS `loja`.`user_compra_produto` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE INDEX `fk_user_has_produto_produto1_idx` ON `loja`.`user_compra_produto` (`produto_idproduto` ASC) VISIBLE;
+-- CREATE INDEX `fk_user_has_produto_produto1_idx` ON `loja`.`user_compra_produto` (`produto_idproduto` ASC) VISIBLE;
 
-CREATE INDEX `fk_user_has_produto_user_idx` ON `loja`.`user_compra_produto` (`user_id` ASC) VISIBLE;
+-- CREATE INDEX `fk_user_has_produto_user_idx` ON `loja`.`user_compra_produto` (`user_id` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -140,9 +140,9 @@ CREATE TABLE IF NOT EXISTS `loja`.`produto_has_category` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_produto_has_category_category1_idx` ON `loja`.`produto_has_category` (`category_category_id` ASC) VISIBLE;
-
-CREATE INDEX `fk_produto_has_category_produto1_idx` ON `loja`.`produto_has_category` (`produto_idproduto` ASC) VISIBLE;
+-- CREATE INDEX `fk_produto_has_category_category1_idx` ON `loja`.`produto_has_category` (`category_category_id` ASC) VISIBLE;
+--
+-- CREATE INDEX `fk_produto_has_category_produto1_idx` ON `loja`.`produto_has_category` (`produto_idproduto` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `loja`.`pagamento` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_pagamento_user_compra_produto1_idx` ON `loja`.`pagamento` (`user_id` ASC) VISIBLE;
+-- CREATE INDEX `fk_pagamento_user_compra_produto1_idx` ON `loja`.`pagamento` (`user_id` ASC) VISIBLE;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

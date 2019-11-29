@@ -3,7 +3,7 @@
 
     use App\Connection;
 
-    class Proprietario
+    class Usuario
     {
         protected $conn;
         public function __construct()
