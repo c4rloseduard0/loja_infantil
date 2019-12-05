@@ -1,12 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>template 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Presentes Cegonhas</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
 </head>
 <body>
-    <?= $this->content(""); ?>
+    <header class="container m-auto">
+        <!--Navegação por busca-->
+        <nav class="navbar  navbar-expand-lg navbar-light bg-light ">
+            <a class="navbar-brand" href="index.html">Pesentes Cegonhas
+                <img src="" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudo_botao" aria-controls="conteudo_botao" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="conteudo_botao">
+                <form class="form-inline ">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" size="50">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+                <ul class="navbar-nav ml-3">
+                    <li class="nav-item  ">
+                        <a class="nav-link" href="login.html"><img src="imagens/icons8-customer-50.png" > <span class="sr-only">(página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrinho.html"><img src="imagens/icons8-add-shopping-cart-50.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid m-1">
+            <nav class="navbar navbar-expand-lg justify-content-center">
+                <a class="nav-item nav-link" href="#"> Categoria 1</a>
+                <a class="nav-item nav-link" href="#"> Categoria 2</a>
+                <a class="nav-item nav-link" href="#"> Categoria 3</a>
+                <a class="nav-item nav-link" href="#"> Categoria 4</a>
+                <a class="nav-item nav-link" href="#"> Categoria 5</a>
+                <a class="nav-item nav-link" href="#"> Categoria 6</a>
+            </nav>
+            </nav>
+            </nav>
+        </div>
+    </header>
+
+    <!--Navegação por categorias-->
+
+<?= $this->content(); ?>
+
+<footer class="">
+    <hr> <!-- linha para divisão-->
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-4 ">
+                <h3 class="text-center"> Contato</h3>
+                <p>Descrição ou algo que queria deixar comentado</p>
+            </div>
+            <div class="col-sm-4 text-center">
+                <img src="imagens/icons8-facebook-circled-50.png">
+                <img src="imagens/icons8-instagram-old-50.png">
+                <img src="imagens/icons8-twitter-50.png">
+            </div>
+            <div class="col-sm-4 ">
+                <h3 class="text-center"> Localização </h3>
+                <p>Descrição ou algo que queria deixar comentado</p>
+            </div>
+
+        </div>
+    </section>
+    <p class="text-center">&copy Copyright 2019 </p>
+</footer>
+<!--Dependências do bootstrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
