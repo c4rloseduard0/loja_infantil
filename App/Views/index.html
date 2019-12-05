@@ -26,78 +26,42 @@
     </a>
 </div>
 
-
 <main>
     <div class="container my-5">
        <!--Parte para os produtos-->
         <section class="">
+            <div class="row">
+
+            <?php
+                $cont = 0;
+                $aux = 0;
+                foreach($this->view->dados as $produto) {
+                if($cont === 3) {
+                    $aux = $cont;
+                    $cont = 0;
+
+            ?>
+            </div>
+            <div class="row">
+                <?php } ?>
+
+                <div class="col-sm card m-2 loja-estilo" style="width: 18rem;">
+                    <img class="card-img-top" src="<?= $produto["path_img"] ?>" alt="Imagem de capa do card">
+                    <div class="card-body produto">
+                        <p class="card-text"><?= $produto["descricao"] ?></p>
+                        <div class="preco">
+                            <hr>
+                            <p>R$ <?= $produto["preco"] ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                $cont++;
+             } ?>
+
+            </div>
             <h3 class="text-center font-weight-bold mb-5"> Produtos </h3>
             <!--Linha de 3 produtos -->
-            <div class="row">
-                <div class="col-sm card m-2" style="width: 18rem;">
-                       <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
-                       <div class="card-body produto">
-                            <p class="card-text">Um exemplo de texto rápido para o produto.</p>
-                           <div class="preco">
-                               <hr>
-                               <p>R$ 190,00</p>
-                           </div>
-                       </div>
-                </div>
-                <div class="col-sm card m-2" style="width: 18rem;">
-                    <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <p class="card-text">Um exemplo de texto rápido para o produto.</p>
-                        <div class="preco">
-                            <hr>
-                            <p>R$ 190,00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm card m-2" style="width: 18rem;">
-                    <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <p class="card-text">Um exemplo de texto rápido para o produto.</p>
-                        <div class="preco">
-                            <hr>
-                            <p>R$ 190,00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Linha de 3 produtos -->
-            <div class="row">
-                <div class="col-sm card m-2" style="width: 18rem;">
-                    <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
-                    <div class="card-body produto">
-                        <p class="card-text">Um exemplo de texto rápido para o produto.</p>
-                        <div class="preco">
-                            <hr>
-                            <p>R$ 190,00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm card m-2" style="width: 18rem;">
-                    <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <p class="card-text">Um exemplo de texto rápido para o produto.</p>
-                        <div class="preco">
-                            <hr>
-                            <p>R$ 190,00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm card m-2" style="width: 18rem;">
-                    <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <p class="card-text">Um exemplo de texto rápido para o produto.</p>
-                        <div class="preco">
-                            <hr>
-                            <p>R$ 190,00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     </div> <!--Finaliza as partes do produtos-->
 </main>

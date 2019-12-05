@@ -8,22 +8,22 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema loja
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `loja` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema loja
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `loja` DEFAULT CHARACTER SET utf8 ;
+USE `loja` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `loja`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user` ;
+DROP TABLE IF EXISTS `loja`.`user` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `loja`.`user` (
   `username` VARCHAR(16) NOT NULL,
   `email` VARCHAR(255) NULL,
   `password` VARCHAR(32) NOT NULL,
@@ -33,11 +33,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`user_1`
+-- Table `loja`.`user_1`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user_1` ;
+DROP TABLE IF EXISTS `loja`.`user_1` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user_1` (
+CREATE TABLE IF NOT EXISTS `loja`.`user_1` (
   `username` VARCHAR(16) NOT NULL,
   `email` VARCHAR(255) NULL,
   `password` VARCHAR(32) NOT NULL,
@@ -45,22 +45,22 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user_1` (
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`category`
+-- Table `loja`.`category`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`category` ;
+DROP TABLE IF EXISTS `loja`.`category` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`category` (
+CREATE TABLE IF NOT EXISTS `loja`.`category` (
   `category_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`category_id`));
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`produto`
+-- Table `loja`.`produto`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`produto` ;
+DROP TABLE IF EXISTS `loja`.`produto` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`produto` (
+CREATE TABLE IF NOT EXISTS `loja`.`produto` (
   `idproduto` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(45) NOT NULL,
   `preco` DECIMAL(5,2) NOT NULL,
@@ -69,20 +69,19 @@ CREATE TABLE IF NOT EXISTS `mydb`.`produto` (
   PRIMARY KEY (`idproduto`),
   CONSTRAINT `fk_produto_category1`
     FOREIGN KEY (`category_category_id`)
-    REFERENCES `mydb`.`category` (`category_id`)
+    REFERENCES `loja`.`category` (`category_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_produto_category1_idx` ON `mydb`.`produto` (`category_category_id` ASC) VISIBLE;
-
+-- CREATE INDEX `fk_produto_category1_idx` ON `loja`.`produto` (`category_category_id` ASC) VISIBLE;
 
 -- -----------------------------------------------------
--- Table `mydb`.`endereco`
+-- Table `loja`.`endereco`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`endereco` ;
+DROP TABLE IF EXISTS `loja`.`endereco` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`endereco` (
+CREATE TABLE IF NOT EXISTS `loja`.`endereco` (
   `cep` VARCHAR(7) NOT NULL,
   `rua` VARCHAR(45) NOT NULL,
   `bairro` VARCHAR(25) NOT NULL,
@@ -92,18 +91,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`endereco` (
   PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_endereco_user1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `loja`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`user_compra_produto`
+-- Table `loja`.`user_compra_produto`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user_compra_produto` ;
+DROP TABLE IF EXISTS `loja`.`user_compra_produto` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user_compra_produto` (
+CREATE TABLE IF NOT EXISTS `loja`.`user_compra_produto` (
   `user_id` INT NOT NULL,
   `produto_idproduto` INT NOT NULL,
   `data_compra` DATE NOT NULL,
@@ -112,28 +111,28 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user_compra_produto` (
   PRIMARY KEY (`user_id`, `produto_idproduto`),
   CONSTRAINT `fk_user_has_produto_user`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `loja`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_has_produto_produto1`
     FOREIGN KEY (`produto_idproduto`)
-    REFERENCES `mydb`.`produto` (`idproduto`)
+    REFERENCES `loja`.`produto` (`idproduto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE INDEX `fk_user_has_produto_produto1_idx` ON `mydb`.`user_compra_produto` (`produto_idproduto` ASC) VISIBLE;
-
-CREATE INDEX `fk_user_has_produto_user_idx` ON `mydb`.`user_compra_produto` (`user_id` ASC) VISIBLE;
-
-CREATE UNIQUE INDEX `user_cpf_UNIQUE` ON `mydb`.`user_compra_produto` (`user_cpf` ASC) VISIBLE;
+-- CREATE INDEX `fk_user_has_produto_produto1_idx` ON `loja`.`user_compra_produto` (`produto_idproduto` ASC) VISIBLE;
+--
+-- CREATE INDEX `fk_user_has_produto_user_idx` ON `loja`.`user_compra_produto` (`user_id` ASC) VISIBLE;
+--
+-- CREATE UNIQUE INDEX `user_cpf_UNIQUE` ON `loja`.`user_compra_produto` (`user_cpf` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`pagamento`
+-- Table `loja`.`pagamento`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`pagamento` ;
+DROP TABLE IF EXISTS `loja`.`pagamento` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`pagamento` (
+CREATE TABLE IF NOT EXISTS `loja`.`pagamento` (
   `idpagamento` INT NOT NULL AUTO_INCREMENT,
   `tipo` ENUM("debito", "credito", "boleto") NOT NULL,
   `numero` VARCHAR(45) NOT NULL,
@@ -144,12 +143,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pagamento` (
   PRIMARY KEY (`idpagamento`),
   CONSTRAINT `fk_pagamento_user_compra_produto1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user_compra_produto` (`user_id`)
+    REFERENCES `loja`.`user_compra_produto` (`user_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_pagamento_user_compra_produto1_idx` ON `mydb`.`pagamento` (`user_id` ASC) VISIBLE;
+-- CREATE INDEX `fk_pagamento_user_compra_produto1_idx` ON `loja`.`pagamento` (`user_id` ASC) VISIBLE;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
@@ -157,24 +156,24 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `mydb`.`category`
+-- Data for table `loja`.`category`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
-INSERT INTO `mydb`.`category` (`category_id`, `name`) VALUES (1, 'Calçados');
-INSERT INTO `mydb`.`category` (`category_id`, `name`) VALUES (2, 'Roupas');
-INSERT INTO `mydb`.`category` (`category_id`, `name`) VALUES (DEFAULT, 'Higiene');
-INSERT INTO `mydb`.`category` (`category_id`, `name`) VALUES (DEFAULT, 'Brinquedos');
+USE `loja`;
+INSERT INTO `loja`.`category` (`category_id`, `name`) VALUES (1, 'Calçados');
+INSERT INTO `loja`.`category` (`category_id`, `name`) VALUES (2, 'Roupas');
+INSERT INTO `loja`.`category` (`category_id`, `name`) VALUES (DEFAULT, 'Higiene');
+INSERT INTO `loja`.`category` (`category_id`, `name`) VALUES (DEFAULT, 'Brinquedos');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `mydb`.`produto`
+-- Data for table `loja`.`produto`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
-INSERT INTO `mydb`.`produto` (`idproduto`, `descricao`, `preco`, `quantidade`, `category_category_id`) VALUES (1, 'Camisa  Floral', 30,00, 5, 2);
+USE `loja`;
+INSERT INTO `loja`.`produto` (`idproduto`, `descricao`, `preco`, `quantidade`, `category_category_id`) VALUES (1, 'Camisa  Floral', 30.00, 5, 2);
 
 COMMIT;
 

@@ -1,11 +1,15 @@
-.preco{
-    display: none;
-}
-.produto:hover .preco{
-    display: block;;
-    background-color: gray;
-    color: black;
+/*.preco{*/
+/*    display: none;*/
+/*}*/
+/*.produto:hover .preco{*/
+/*    display: block;;*/
+/*    background-color: gray;*/
+/*    color: black;*/
 
+/*}*/
+
+.loja-estilo:hover {
+    background-color: #9932cc;
 }
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)
  Sem media query para `xs`, já que este é o padrão, no Bootstrap.

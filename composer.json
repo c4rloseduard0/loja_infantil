@@ -5,7 +5,15 @@
         {
             "name": "Carlos Eduardo",
             "email": "c4rloseduard0@alu.ufc.br"
-        }
+        },
+      {
+        "name": "Fabricio Moura",
+        "email": "fabricioldi36@gmail.com"
+      },
+      {
+        "name": "Raissa Ellen",
+        "email": "sousaellen016@gmail.com"
+      }
     ],
     "require": {},
     "autoload": {

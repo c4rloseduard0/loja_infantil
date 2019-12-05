@@ -34,6 +34,12 @@
     			'action' => 'cadastrar'
     		);
 
+    		$routes['produto'] = array(
+                'route' => '/produto',
+                'controller' => 'ProdutoController',
+                'action' => 'produto'
+            );
+
             $this->setRoutes($routes);
         }
 
