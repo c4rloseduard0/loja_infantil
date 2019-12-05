@@ -37,10 +37,10 @@
         public function getProduto() {
             $query = "SELECT * FROM produto WHERE idproduto = :id";
             $stmt = $this->conn->prepare($query);
-            $stmt->bindValue("id", $this->id);
+            $stmt->bindValue("id", $this->__get('id'));
             $stmt->execute();
 
-            reutrn $stmt->fetch();
+            return $stmt->fetch(\PDO::FETCH_ASSOC);
         }
     }
 ?>

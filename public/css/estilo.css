@@ -11,6 +11,8 @@
 .loja-estilo:hover {
     background-color: #9932cc;
 }
+
+tranlate3d(x,y,z)
 /*Dispositivos extra small (telefones em modo retrato, com menos de 576px)
  Sem media query para `xs`, já que este é o padrão, no Bootstrap.
  Dispositivos small (telefones em modo paisagem, com 576px ou mais)*/

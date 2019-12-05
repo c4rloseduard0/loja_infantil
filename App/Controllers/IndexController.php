@@ -12,7 +12,7 @@
         {
             $produto = new Produto();
             $this->view->dados = $produto->getAllProdutos();
-            $this->render("index", "temp1");
+            $this->render("index", "temp2");
         }
     }
  ?>

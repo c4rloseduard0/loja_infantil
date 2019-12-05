@@ -40,6 +40,12 @@
                 'action' => 'produto'
             );
 
+            $routes['comprar'] = array(
+                'route' => '/comprar',
+                'controller' => 'ComprarController',
+                'action' => 'comprar'
+            );
+
             $this->setRoutes($routes);
         }
 

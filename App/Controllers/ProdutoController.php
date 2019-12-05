@@ -9,7 +9,9 @@
         public function produto()
         {
             $produto = new Produto();
-            $produto->__
+            $produto->__set('id', isset($_GET['produto']) ? $_GET['produto'] : '');
+            $this->view->dados = $produto->getProduto();
+            $this->render('produto', 'temp1');
         }
     }
 ?>

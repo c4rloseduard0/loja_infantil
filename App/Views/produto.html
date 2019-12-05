@@ -1,0 +1,87 @@
+<div class="container mt-5">
+
+
+    <!--Section: Content-->
+    <section class="mb-5">
+
+        <!-- Section heading -->
+
+
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-12">
+
+                <!--News card-->
+                <div class="card">
+                    <h3 class="text-justify font-weight-bold mb-5 mt-5 ml-5"><?= $this->view->dados['descricao'] ?></h3>
+                    <div class="card-body">
+                        <div class="">
+                            <h4 class="mb-0">R$ <?= $this->view->dados['preco'] ?></h4><!-- Valor do produto-->
+                            <!--<small class="grey-text">+ $10 Taxa de envio</small> -->
+                        </div>
+                        <div class="row h-100 d-flex align-items-center">
+
+                            <div class="col-lg-6">
+                                <p class="text-muted font-weight-light ml-3 mb-5"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis cum dolorem ea eius enim ex expedita fugit ipsa itaque iusto laboriosam nostrum pariatur placeat provident quisquam, repudiandae rerum veritatis?
+                                </p>
+                                <ul class="fa-ul mb-5 text-muted font-weight-light">
+                                    <!--Pontos de destaque nos produtos -->
+                                    <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span> Lorem psum dolor sit amet.    </li>
+                                    <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span> Lorem ipsum dolor sit amet.   </li>
+                                    <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span> Lorem ipsum dolor sit amet.   </li>
+                                    <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span> Lorem ipsum dolor sit amet.   </li>
+                                </ul>
+                                <div class="d-flex justify-content-between ml-3">
+                                    <button type="button" class="btn btn-lg btn-primary mx-0 loja-comprar">Comprar</button>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="<?= $this->view->dados['path_img'] ?>" alt="First slide" class="img-fluid">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Grid column-->
+
+        </div>
+
+    </section>
+    <!--Section: Content-->
+    <div class="row">
+
+        <div class="col-sm card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
+            <div class="card-body produto">
+                <p class="card-text">Um exemplo de texto rápido para o produto.</p>
+                <div class="preco">
+                    <hr>
+                    <p>R$ 190,00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
+            <div class="card-body">
+                <p class="card-text">Um exemplo de texto rápido para o produto.</p>
+                <div class="preco">
+                    <hr>
+                    <p>R$ 190,00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="imagens/produtos/padrao.png" alt="Imagem de capa do card">
+            <div class="card-body">
+                <p class="card-text">Um exemplo de texto rápido para o produto.</p>
+                <div class="preco">
+                    <hr>
+                    <p>R$ 190,00</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
